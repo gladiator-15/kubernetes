@@ -1,0 +1,14 @@
+#download binary
+
+wget  https://get.helm.sh/helm-v3.14.3-linux-amd64.tar.gz
+
+#untar
+
+tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
+
+#move
+
+sudo mv linux-amd64/helm /usr/local/bin/helm
+
+helm version
+
