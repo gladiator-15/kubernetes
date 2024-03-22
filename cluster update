@@ -13,7 +13,22 @@ eksctl create cluster --name my-demo2eks-cluster --nodegroup-name my-worker-node
 3.eksctl version
 #To upgrade to version
 
-4. eksctl upgrade cluster --name my-cluster --version 1.29 --approve
+4. eksctl upgrade cluster --name my-cluster --version 1.26 --approve
+
+#Then update kubectl client 
+#Download the kubectl binary for your cluster's Kubernetes version from Amazon S3.
+
+
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.26.0/2024-01-04/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+
+kubectl version --client
+
 
 
 note:
